@@ -16,7 +16,12 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
   late AnimationController motionController;
   late Animation motionAnimation;
-  double size = 5;
+
+  double minAnimationChange = 0.5;
+  double sizeImage = 5;
+  int sizeImageChange = 250;
+  int animationTime = 500;
+  int timerTime = 2;
 
   @override
   void initState() {
@@ -37,7 +42,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
       body: Center(
         child: Image.asset(
           Images.icon.key,
-          height: size,
+          height: sizeImage,
         ),
       ),
     );
@@ -45,9 +50,9 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
 
   void _setAnimation() {
     motionController = AnimationController(
-      duration: const Duration(milliseconds: 500),
+      duration: Duration(milliseconds: animationTime),
       vsync: this,
-      lowerBound: 0.5,
+      lowerBound: minAnimationChange,
     );
 
     motionAnimation = CurvedAnimation(
@@ -68,14 +73,14 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
 
     motionController.addListener(() {
       setState(() {
-        size = motionController.value * 250;
+        sizeImage = motionController.value * sizeImageChange;
       });
     });
   }
 
   void _setTimerToHome() {
     Timer(
-      const Duration(seconds: 2),
+      Duration(seconds: timerTime),
       () => Routes.loginPage.navigate(context),
     );
   }

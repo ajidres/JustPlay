@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:justplay/extentions/animation_screen_extensions.dart';
-import 'package:justplay/ui/home_page.dart';
+import '../features/home_page.dart';
+import '../features/login/login_page.dart';
 
 enum Routes {
   loginPage,
@@ -20,13 +21,13 @@ extension RoutesExtention on Routes {
   navigate(BuildContext context) {
     switch (this) {
       case Routes.homePage:
-        return Navigator.of(context).pushReplacement(const HomePage().scaleTransition());
-      case Routes.loginPage:
         return Navigator.of(context).pushReplacementNamed(key);
+      case Routes.loginPage:
+        return Navigator.of(context).pushReplacement(const LoginPage().scaleTransition());
     }
   }
 }
 
-
-
-
+Map<String, WidgetBuilder> routesList() =>
+    {Routes.homePage.key: (context) => const HomePage(),
+      Routes.loginPage.key: (context) => const LoginPage()};

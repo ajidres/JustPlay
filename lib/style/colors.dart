@@ -6,4 +6,5 @@ class AppColorPalette{
   static const Color secondary = Color(0xFFfb404c);
   static const colorScaffold = Color(0xFFffffff);
 
+
 }
