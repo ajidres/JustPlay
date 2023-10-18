@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:justplay/extentions/animation_screen_extensions.dart';
-import '../features/home_page.dart';
+import '../features/home/home_page.dart';
 import '../features/login/login_page.dart';
 
 enum Routes {
