@@ -20,6 +20,18 @@ ThemeData appTheme() {
           bodySmall: TextStyle(color: Colors.black, fontSize: 12.0)));
 }
 
+extension SetTextTheme on String{
+  Text setTextThemeNormal(BuildContext context) {
+    return Text(this, style: Theme
+        .of(context)
+        .textTheme
+        .bodySmall);
+  }
+
+}
+
+
+
 
 
 

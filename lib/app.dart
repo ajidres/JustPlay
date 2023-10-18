@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'features/home_screen.dart';
+import 'package:justplay/ui/home_page.dart';
+import 'package:justplay/ui/login_page.dart';
+import 'package:justplay/ui/splash_page.dart';
+import 'extentions/routes_extentions.dart';
 import 'style/themes.dart';
 
 class App extends StatelessWidget {
@@ -11,10 +14,11 @@ class App extends StatelessWidget {
       title: "JustPlay",
       debugShowCheckedModeBanner: false,
       theme: appTheme(),
-      home: const HomeScreen(),
-      // routes: {
-      //   RoutesConstant.tennisCourt.key: (context) => const ReservationScreen()
-      // },
+      home: const SplashPage(),
+      routes: {
+        Routes.homePage.key: (context) => const HomePage(),
+        Routes.loginPage.key: (context) => const LoginPage()
+      },
     );
   }
 
