@@ -81,7 +81,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
   void _setTimerToHome() {
     Timer(
       Duration(seconds: timerTime),
-      () => Routes.homePage.navigate(context),
+      () => Routes.loginPage.navigate(context),
     );
   }
 }
