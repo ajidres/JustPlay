@@ -42,6 +42,12 @@ dependencies:
   # HTTP
   http: ^1.1.0
 
+  # MOCK DATA
+  mock_data: ^2.0.0
+
+  #FORMAT DATE
+  intl: ^0.18.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -1,3 +1,4 @@
+import 'game_info.dart';
 import 'wheather_info.dart';
 
 class CityInfo{
@@ -8,6 +9,8 @@ class CityInfo{
   String location;
 
   Weather? weather;
+
+  List<GameInfo>? gameInfo;
 
   CityInfo(this.name, this.image, this.location);
 

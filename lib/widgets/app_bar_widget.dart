@@ -1,12 +1,13 @@
-
 import 'package:flutter/material.dart';
 
 import '../style/colors.dart';
 
-class AppBarWidget extends StatelessWidget implements PreferredSize{
-
+class AppBarWidget extends StatelessWidget implements PreferredSize {
   final String title;
-  const AppBarWidget({super.key, required this.title});
+
+  final bool showBack;
+
+  const AppBarWidget({super.key, required this.title, this.showBack = false});
 
   @override
   Widget get child => throw UnimplementedError();
@@ -21,8 +22,12 @@ class AppBarWidget extends StatelessWidget implements PreferredSize{
       backgroundColor: AppColorPalette.primary,
       elevation: 8,
       title: Text(title),
+      leading: showBack
+          ? IconButton(
+              icon: const Icon(Icons.arrow_back),
+              onPressed: () => Navigator.of(context).pop(),
+            )
+          : null,
     );
   }
-
-
 }

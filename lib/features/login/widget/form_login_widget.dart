@@ -7,8 +7,8 @@ import '../../../extentions/routes_extentions.dart';
 import '../../../widgets/text_input_form_widget.dart';
 
 
-const constUser = "JOGABONITO";
-const constPassword = "JOGABONITO!123";
+const constUser = "JOGoBONITO";
+const constPassword = "JOGOBONITO!123";
 
 class FormLoginWidget extends StatefulWidget {
   const FormLoginWidget({super.key});

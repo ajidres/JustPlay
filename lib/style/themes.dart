@@ -54,6 +54,10 @@ extension SetStringTheme on String {
     return Text(this, style: const TextStyle().textThemeMedium(context));
   }
 
+  Text setTextThemeMediumBold(BuildContext context) {
+    return Text(this, style: const TextStyle().textThemeMedium(context).copyWith( fontWeight: FontWeight.bold));
+  }
+
   Text setTextThemeButton(BuildContext context) {
     return Text(this,
         style: const TextStyle().textThemeMedium(context).copyWith(color: Colors.white, fontWeight: FontWeight.bold));

@@ -1,10 +1,14 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:justplay/extentions/image_extentions.dart';
 import 'package:justplay/features/home/domain/city_info.dart';
 
 import 'package:http/http.dart' as http;
 import 'package:justplay/features/home/domain/wheather_info.dart';
+import 'package:mock_data/mock_data.dart';
+
+import '../domain/game_info.dart';
 
 class HomeRepository{
 
@@ -19,14 +23,22 @@ class HomeRepository{
       CityInfo('Tokyo', Images.tokyo.key, 'lat=35.5074466&lon=139.11045'),
     ];
 
+
+
     for(var item in dataList){
+
+      var random = mockInteger(1, 10);
+
+      List<GameInfo> list = List<GameInfo>.generate(random, (index) => getGameInfo());
+
+      item.gameInfo = list;
+
       var weather = await getForecast(item.location);
       item.weather=weather;
     }
 
 
     return dataList;
-
 
   }
 
@@ -44,6 +56,31 @@ class HomeRepository{
     } catch (e) {
       rethrow;
     }
+  }
+
+  GameInfo getGameInfo(){
+
+    var random = Random().nextInt(2);
+    GameCategory category = GameCategory.values[random];
+
+    random = Random().nextInt(2);
+    var field = GameField.values[random];
+
+    DateTime now = DateTime.now();
+    var date = mockDate(now, DateTime(now.year, now.month, now.day+5));
+
+    var gamble = Random().nextBool();
+
+    var gambleAmount =0;
+
+    if(gamble) gambleAmount = mockInteger(500, 3000);
+
+    var maxPeople = mockInteger(4,20);
+
+    var enrollPeople = mockInteger(3, maxPeople);
+
+    return GameInfo(category, date, field, gamble, gambleAmount, maxPeople, enrollPeople);
+
   }
 
 }
