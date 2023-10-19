@@ -1,16 +1,14 @@
 # justplay
 
-A justplay Flutter project.
+This is a repo that contain a test for JustPlay
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This Project was made in Flutter, contain four screen, splash with an animation, animation transition
+between splash screen and login screen, login screen, home screen and games detail by city, also is
+connected to a weather public api for weather broadcast of the city
 
-A few resources to get you started if this is your first Flutter project:
+To login in the app the credentials are:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+**User:** JOGoBONITO
+**Password:** JOGOBONITO!123
