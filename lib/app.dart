@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'features/home_screen.dart';
+import 'extentions/routes_extentions.dart';
+import 'features/splash_page.dart';
 import 'style/themes.dart';
 
 class App extends StatelessWidget {
@@ -8,13 +9,11 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "JustPlay",
+      title: 'JustPlay',
       debugShowCheckedModeBanner: false,
       theme: appTheme(),
-      home: const HomeScreen(),
-      // routes: {
-      //   RoutesConstant.tennisCourt.key: (context) => const ReservationScreen()
-      // },
+      home: const SplashPage(),
+      routes: routesList(),
     );
   }
 

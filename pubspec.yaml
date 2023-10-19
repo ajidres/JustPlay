@@ -36,6 +36,18 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
 
+  # BLOC
+  flutter_bloc: ^8.1.3
+
+  # HTTP
+  http: ^1.1.0
+
+  # MOCK DATA
+  mock_data: ^2.0.0
+
+  #FORMAT DATE
+  intl: ^0.18.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
